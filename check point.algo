@@ -1,0 +1,30 @@
+ALGORITHM sentence
+VAR
+    count_sentences_length,count_number_of_words,count_number_of_vowels:INTEGER :=0;
+    text_sentence :STRING;
+    i:INTEGER;
+
+BEGIN
+    
+read(text_sentence);
+WHILE(text_sentence[text_sentence.length-1]<>".") DO
+Write("the sentence must end with dot");
+read(text_sentence);
+
+END_WHILE
+count_sentences_length:= text_sentence.length ;
+FOR i FROM 0 TO text_sentence.length-1 STEP 1  DO
+    IF (text_sentence[i]="a"||"A"||"e"||"E"||"o"||"O"||"i"||"I"||"u"||"U"||"y"||"Y")
+    THEN 
+    count_number_of_vowels:= count_number_of_vowels+1;
+
+    END_IF
+    IF (text_sentence[i]= " ") THEN
+        count_number_of_words:= count_number_of_words+1;
+    END_IF
+
+END_FOR
+Write("this sentence has" +count_number_of_words+ " words and its length "+count_sentences_length +"and"+count_number_of_vowels+"vowels");
+
+
+END
